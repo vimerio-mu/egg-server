@@ -8,6 +8,7 @@ class HomeController extends Controller {
     // 将字符串转为css
     const result = sass.compileString(`
     $base-font-size: 40px;
+    $base-font-size: 44px;
     h1 {
       font-size: 50px;
       code {
