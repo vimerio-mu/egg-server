@@ -1,0 +1,658 @@
+/*
+ * Template Name: UF3.0 - Simple Frame For UF3.0
+ * Version: 0.9.0
+ * Author: Wmq
+ * Email: wenmq@hundsun.com
+ * 注意:
+ * 1.为了适应脚本遍历，每一行的$前不能有空格
+ * 2.不能使用sass函数
+ * 3.不要有重复的变量声明
+ * 4.不要太灵活的使用$变量，比如topbarShadow: '0 0 2px $topbar-shadow-color'等，只允许$变量作为唯一值的形式
+ */
+@import "../common.scss";
+// A-Common
+$color-default-one: #F7F7F7;
+$color-default-two: #F2F2F2;
+$color-default-three: #EDEDED;
+$color-default-four: #E6E6E6;
+$color-default-five: #D9D9D9;
+$color-default-six: #999;
+$color-default-seven: #808080;
+$color-default-eight: #666;
+$color-default-nine: #333;
+$color-default-ten: #000;
+$color-dark-one: #96A0B2;
+$color-dark-two: #808BA0;
+$color-dark-three: #6B778F;
+$color-dark-four: #5D697E;
+$color-dark-five: #4C5668;
+$color-dark-six: #3B4252;
+$color-dark-seven: #282E3A;
+$color-dark-eight: #232934;
+$color-dark-nine: #20242E;
+$color-dark-ten: #181B22;
+
+// A-Base
+$body-background: #fff;
+$title-color: #333;
+$text-color: #333;
+$desc-color: #666;
+$text-color-support: #999;
+$title-bgcolor: #fff;
+$content-bgcolor: #fff;
+$disabled-color: #B3B3B3;
+$disabled-bgcolor: #EDEDED;
+$theme-base-color: #037df3;
+$theme-base-hover-color: #E5F2FD;
+$theme-base-active-color: #037df3;
+$primary-color: #037df3;
+$primary-hover-color: #3597f5;
+$primary-active-color: #0270da;
+$primary-bgcolor: #E5F2FD;
+$primary-active-bgcolor: #CDE5FD;
+$primary2-color: #037df3;
+$primary2-hover-color: #3597f5;
+$primary2-active-color: #0270da;
+$info-color: #029afd;
+$info-hover-color: #34aefd;
+$info-active-color: #018ae3;
+$info-bgcolor: #E5F4FE;
+$success-color: #1cb77b;
+$success-hover-color: #20ccba;
+$success-active-color: #19a36e;
+$success-bgcolor: #e8f7f1;
+$warning-color: #f2b044;
+$warning-hover-color: #ffba48;
+$warning-active-color: #d99e3d;
+$warning-bgcolor: #fDf7ec;
+$error-color: #f14c5d;
+$error-hover-color: #f36f7d;
+$error-active-color: #d84453;
+$error-bgcolor: #FDEDEE;
+$error-bgcolor2: #FEF6F7;
+$error-active-bgcolor: #FCDBDF;
+$changed-color: #d9534f; //?
+$link-color: #037df3;
+$text-link-color: #029afd;
+$link-hover-color: #3597f5; //从原来的lighten（20%）改成定值
+$link-active-color: #0270da;
+$text-link-hover-color: #34aefd;
+$text-link-active-color: #018ae3;
+$selected-color: $link-hover-color;
+$white-font-color: #fff;
+$no-select-color: #e5ebf1;
+$menu-hover-bg-color: #e5f2fd;
+$icon-color: #666; //规范里的图标分通用图标、导航图标、其他图标，颜色不一样
+$icon-color-support: #999;
+
+// A-Background
+$background-color-base: #fff;
+$background-color-normal: #f2f2f2;
+$background-color-support: #f7f7f7;
+$background-color-select-hover: #e6f2fd;
+$background-color-workaround: #DDE8F5;
+$selected-bg: #cde5fd;
+$selected-light-bg: #F3F9FF;
+$banner-light-bg: #F6FAFF;
+$panel-bg: #fff;
+$background-tag-bg: #fff;
+$table-thead-bg: $background-color-normal;
+$table-tbody-bg: $background-color-base;
+$table-td-stripe-bg: $background-color-support;
+$table-td-hover-bg: $menu-hover-bg-color;
+$table-td-highlight-bg: $selected-bg;
+$table-td-selected-bg: $selected-bg;
+$table-td-group-line-bg: $background-color-support;
+$background-color-icon: #E0EFFD;
+$background-color-main-index-form: #fff;
+$background-color-banner-bg: #fff; // 新首页菜单导航看片背景色
+$background-color-banner-hover-bg: #4BA0F3;
+
+// A-Border
+$border-color-base: #d9d9d9;
+$border-color-disabled: #d9d9d9;
+$border-color-split: #dddddd;
+$border-color-bottom: #ececec;
+$border-color-bottom2: #D7DDE4;
+$border-color-divide: #D9D9D9;
+$border-color-table: #e6e6e6;
+
+// A-shadow
+$shadow-base: 0 2px 8px 0 rgba(0,0,0,0.30);
+$shadow-up: 0 -2px 0 rgba(0,0,0,0.07);
+$shadow-deep: 0 4px 12px 0 rgba(0,0,0,0.15);
+$shadow-row: 0 2px 15px 0 rgba(225,225,225,0.50);
+$shadow-right-bottom-fixed: 0 1px 10px 4px #c1d7ec;
+
+// Alert
+$alert-desc-color: $text-color;
+$alert-message-color: $title-color;
+$alert-success-border-color: #B7EB8F;
+$alert-success-bgcolor: $success-bgcolor;
+$alert-success-icon-color: $success-color;
+$alert-info-border-color: #91CBFF;
+$alert-info-bgcolor: $info-bgcolor;
+$alert-info-icon-color: $info-color;
+$alert-warning-border-color: #FDD496;
+$alert-warning-bgcolor: $warning-bgcolor;
+$alert-warning-icon-color: $warning-color;
+$alert-error-border-color: #FFA39E;
+$alert-error-bgcolor: $error-bgcolor;
+$alert-error-icon-color: $error-color;
+$alert-close-iconfont-color: #979797;
+
+// BackTop
+$backtop-inner-background-color: rgba(0, 0, 0, 0.5);
+$backtop-inner-box-shadow: $shadow-base;
+$backtop-inner-color: #fff;
+$backtop-inner-hover-background-color: $primary-hover-color;
+
+// Badges
+$badge-count-background: $error-color;
+$badge-count-box-shadow: 0 0 0 1px #fff;
+
+
+// Button
+$btn-group-border: #298DFF;
+$btn-base-color: #fff;
+$btn-disable-color: #b3b3b3;
+$btn-disable-bg: #ededed;
+$btn-disable-border: $border-color-base;
+$btn-ghost-color: $text-color;
+$btn-ghost-bg: $background-color-base;
+$btn-ghost-border: $border-color-base;
+$btn-before-background: #fff;
+$btn-common-bgcolor: #f2f2f2;
+
+// ButtonDefault
+$btn-default-color: $text-color;
+$btn-default-bg: $link-color;
+$btn-default-border: $link-color;
+$btn-default-hover-color: $btn-base-color;
+$btn-default-hover-bgcolor: $link-hover-color;
+$btn-default-hover-border-color: $link-hover-color;
+$btn-default-press-color: #FFF;
+$btn-default-press-bgcolor: $link-active-color;
+$btn-default-press-border-color: $link-active-color;
+
+// ButtonSmall
+$btn-small-default-color: $text-color;
+$btn-small-default-bg: $primary-color;
+$btn-small-default-border: $primary-color;
+$btn-small-default-hover-color: $btn-base-color;
+$btn-small-default-hover-bgcolor: $primary-hover-color;
+$btn-small-default-hover-border-color: $primary-hover-color;
+$btn-small-default-press-color: #FFF;
+$btn-small-default-press-bgcolor: $primary-active-color;
+$btn-small-default-press-border-color: $primary-active-color;
+
+// ButtonGhost
+$btn-ghost-hover-color: $link-hover-color;
+$btn-ghost-hover-bgcolor: $btn-ghost-bg;
+$btn-ghost-hover-border-color: $link-hover-color;
+$btn-ghost-press-color: $link-active-color;
+$btn-ghost-press-bgcolor: $btn-ghost-bg;
+$btn-ghost-press-border-color: $link-active-color;
+
+// ButtonPrimary
+$btn-primary-color: $btn-base-color;
+$btn-primary-bg: $link-color;
+$btn-primary-border: $btn-primary-bg;
+$btn-primary-hover-color: $btn-primary-color;
+$btn-primary-hover-bgcolor: $link-hover-color;
+$btn-primary-hover-border-color: $link-hover-color;
+$btn-primary-press-color: $btn-primary-color;
+$btn-primary-press-bgcolor: $link-active-color;
+$btn-primary-press-border-color: $link-active-color;
+
+// ButtonInfo
+$btn-info-color: $btn-base-color;
+$btn-info-bg: $info-color;
+$btn-info-border: $info-color;
+$btn-info-hover-color: $btn-base-color;
+$btn-info-hover-bgcolor: $info-hover-color;
+$btn-info-hover-border-color: $info-hover-color;
+$btn-info-press-color: $btn-base-color;
+$btn-info-press-bgcolor: $info-active-color;
+$btn-info-press-border-color: $info-active-color;
+
+// ButtonDanger
+$btn-danger-color: $btn-base-color;
+$btn-danger-bg: $error-color;
+$btn-danger-border: $error-color;
+$btn-danger-hover-color: $btn-base-color;
+$btn-danger-hover-bgcolor: $error-hover-color;
+$btn-danger-hover-border-color: $error-hover-color;
+$btn-danger-press-color: $btn-base-color;
+$btn-danger-press-bgcolor: $error-active-color;
+$btn-danger-press-border-color: $error-active-color;
+
+// ButtonSuccess
+$btn-success-color: $btn-base-color;
+$btn-success-bg: $success-color;
+$btn-success-border: $success-color;
+$btn-success-hover-color: $btn-base-color;
+$btn-success-hover-bgcolor: $success-hover-color;
+$btn-success-hover-border-color: $success-hover-color;
+$btn-success-press-color: $btn-base-color;
+$btn-success-press-bgcolor: $success-active-color;
+$btn-success-press-border-color: $success-active-color;
+
+// ButtonWarning
+$btn-warning-color: $btn-base-color;
+$btn-warning-bg: $warning-color;
+$btn-warning-border: $warning-color;
+$btn-warning-hover-color: $btn-base-color;
+$btn-warning-hover-bgcolor: $warning-hover-color;
+$btn-warning-hover-border-color: $warning-hover-color;
+$btn-warning-press-color: $btn-base-color;
+$btn-warning-press-bgcolor: $warning-active-color;
+$btn-warning-press-border-color: $warning-active-color;
+
+// ButtonError
+$btn-error-color: $btn-base-color;
+$btn-error-bg: $error-color;
+$btn-error-border: $error-color;
+$btn-error-hover-color: $btn-base-color;
+$btn-error-hover-bgcolor: $error-hover-color;
+$btn-error-hover-border-color: $error-hover-color;
+$btn-error-press-color: $btn-base-color;
+$btn-error-press-bgcolor: $error-active-color;
+$btn-error-press-border-color: $error-active-color;
+
+// Calendar
+$calendar-month-content-color: #999999;
+$calendar-month-content-border-color: transform;
+$calendar-month-content-item-color: #333333;
+$calendar-month-content-background: #F0F3F8;
+$calendar-month-content-item-boder: 2px solid #dddddd;
+$calendar-month-restDay-color: #bbbbbb;
+$calendar-month-day-active-color: #fff;
+$calendar-month-day-selected-background: #037df3;
+$calendar-month-day-border: 1px #e9eaec solid;
+$calendar-month-div-box-shadow: 0 2px 8px #d3ddeb;
+$calendar-handle-item-hover-background: #111;
+$calendar-handle-item-hover-color: #fff;
+$calendar-month-content-item-bg: none;
+
+// Datepicker
+$date-picker-boder-color: $background-color-support;
+$date-picker-cell-hover-bg: #f3f9ff;
+$date-picker-panel-shortcut-hover-bg: #F3F9FF;
+$date-picker-sidebar-bg: #ffffff;
+$date-picker-sidebar-boder-color: #dddddd;
+$date-picker-confirm-border-top: 1px solid #dce1e7;
+$date-picker-confirm-time-disabled-color: $link-color;
+$date-picker-confirm-arrow-btn-color: $icon-color;
+$date-picker-confirm-arrow-btn-hover-color: $link-hover-color;
+
+// Drawer
+$drawer-content-background-color: $background-color-base;
+
+// EditGrid
+$editgrid-title-expand-color: #495060;
+$editgrid-background-color: $background-color-base;
+$editgrid-border-right: 1px solid $border-color-base;
+$editgrid-th-td-border-bottom: 1px solid $border-color-base;
+
+// Form
+$form-label-color: $text-color;
+$form-item-label-background: transparent;
+
+// HDataTree
+$h-datatree-search-visable-border-color: $theme-base-color;
+
+// Input
+$input-color: $text-color;
+$input-bg: $background-color-base;
+$input-placeholder-color: $text-color-support;
+$input-readonly-color: $text-color;
+$input-border-color: $border-color-base;
+$input-hover-border-color: $primary-hover-color;
+$input-focus-border-color: $primary-active-color;
+$input-disabled-bg: $disabled-bgcolor;
+$input-readonly-bg: $disabled-bgcolor;
+$input-hint: #909399;
+
+// InputNumber
+$inputnumber-input-color: $text-color;
+$inputnumber-mixin-disabled-color: #666;
+$inputnumber-handler-wrap-background: #fff;
+$inputnumber-append-background: #eee;
+$inputnumber-handler-color: #999;
+$inputnumber-handler-down-inner-color: #999;
+
+// Legend
+$legend-color: #333;
+
+//LoadingBar
+$loading-bar-normal-color: $primary-color;
+
+// Message
+$message-notice-content-box-shadow: $shadow-base;
+$message-notice-content-background: $content-bgcolor;
+
+// Mixin
+$mixin-content-header-color: $title-color;
+$mixin-checkbox-disabled-check-color: #999999;
+$mixin-input-disabled-color: #5D6673;
+$mixin-checkbox-inner-border-color: #d7dde4;
+$mixin-checkbox-disabled-color: #999999;
+$mixin-checkbox-disabled-bg: $background-color-normal;
+$mixin-checkbox-disabled-check-border-color: $border-color-disabled;
+$mixin-input-border-readonly-color: #5dacf7;
+$mixin-input-active-box-shadow: 0 0 0 2px rgba(2,112,218, 0.2);
+$mixin-input-active-error-box-shadow: 0 0 0 2px rgba(241,76,93, 0.2);
+
+// Msgbox
+$msgbox-header-bg: transparent;
+$msgbox-body-color: $text-color;
+$msgbox-title-color: $title-color;
+$msgbox-content-background-color: $content-bgcolor;
+
+// Navbar
+$navbar-bgcolor: #F7F7F7;
+$navbar-color: #171B26;
+$navbar-hover-color: $theme-base-color;
+$navbar-active-color: $theme-base-color;
+$navbar-active-background: #FFFFFF;
+$navbar-tag-hover-bgcolor: #4A94FA;
+$navbar-tag-arrow-right-border-bg: #e6e6e6;
+$navbar-tag-close-tip-bgcolor: #fff;
+$navbar-tag-close-tip-item-hover-bgcolor: #4A94FA;
+$navbar-tag-close-tip-item-hover-color: #fff;
+
+// Notice
+$notice-notice-background: $background-color-base;
+$notice-desc-color: $desc-color;
+$notice-notice-close-color: $desc-color;
+$notice-with-normal-color: transparent;
+$notice-with-info-color: transparent;
+$notice-with-success-color: transparent;
+$notice-with-warning-color: transparent;
+$notice-with-error-color: transparent;
+
+// Page
+$page-jump-next-color: #DCE1E7;
+$page-next-a-color: #ccc;
+$page-disabled-color: $disabled-color;
+$page-disabled-bgcolor: $disabled-bgcolor;
+$page-disabled-border-color: $border-color-base;
+$page-disabled-hover-border-color: $border-color-base;
+$page-item-background-color: #fff;
+$page-item-active-hover-a-color: #fff;
+$page-jump-next-after-color: #ccc;
+$page-options-reload-a-color: #495060;
+$page-options-reload-a-border: 1px solid #D7DDE4;
+$page-mini-background-color: #fff;
+$page-mini-item-active-border: none;
+$page-item-active-bg: $primary-color;
+$page-simple-disabled-background: $disabled-bgcolor;
+
+// Panel
+$h-panel-btn-color: #029AFD;
+$h-panel-btn-border-color: $primary-color;
+$h-panel-btn-hover-color: #34AEFD;
+$h-panel-btn-press-color: #0088E6;
+
+// PointsRankingPanel
+$pr-panel-bg-line-color: #F4F4F4;
+
+// PopTip
+$poptip-arrow-color: $border-color-split;
+$poptip-inner-background-color: $panel-bg;
+$poptip-popper-after-border-top-color: $panel-bg;
+$poptip-popper-after-border-right-color: $panel-bg;
+$poptip-popper-after-border-bottom-color: $panel-bg;
+$poptip-popper-after-border-left-color: $panel-bg;
+
+// Radio
+$radio-inner-after-color: #999;
+$radio-inner-color: #F2F2F2;
+$radio-disabled-inner-border-color: $border-color-base;
+$radio-inner-background-color: $background-color-base;
+$radio-group-button-wrapper-checked-color: #fff;
+$radio-group-button-wrapper-disabled-color: #ccc;
+$radio-group-button-wrapper-disabled-hover-color: #ccc;
+$radio-group-button-wrapper-disabled-wrapper-checked-color: #fff;
+$radio-group-button-wrapper-disabled-wrapper-checked-background-color: #e6e6e6;
+
+// Rate
+$rate-star-color: #f2b044;
+
+// ScrollBar
+$scrollbar-body-bgcolor: #F5F5F5;
+$scrollbar-body-color: #2B3643;
+$scrollbar-bgcolor: transparent;
+$scrollbar-color: #B3B3B3;
+$scrollbar-active-color: #999999;
+$scrollbar-hover-color: $border-color-base;
+
+// Select
+$select-selection-background-color: $background-color-base;
+$select-multiple-selected-item-focus-background: $panel-bg;
+$select-selection-hover-color: $link-hover-color;
+$select-selection-active-color: $link-active-color;
+
+// SelectBlock
+$selectBlock-item-header-background: $background-color-support;
+$selectBlock-group-item-color: #999;
+$selectBlock-selected-background: $background-color-base;
+$selectBlock-hideMult-after-color: $background-color-base;
+
+// SelectDropdown
+$selectDropdown-background-color: #fff;
+
+// SelectTable
+$selectTable-selection-background-color: $background-color-base;
+$selectTable-multiple-h-tag-background: #f5f5f5;
+$selectTable-multiple-h-tag-border: 1px solid #f7f7f7;
+
+// SelectTree
+$selectTree-selection-background-color: $background-color-base;
+
+// Sidebar
+$sidebar-bgcolor: #fff;
+$sidebar-search-holdercolor: #999;
+$sidebar-search-iconcolor: #969696;
+$sidebar-search-hover-color: #fff;
+$sidebar-select-color: #333;
+$sidebar-select-iconColor: #999;
+$sidebar-menu-itemBorder: 1px solid #192229;
+$sidebar-open-menu-bgcolor: #F6F6F6;
+$sidebar-open-menu-color: #333;
+$sidebar-open-menu-hover-color: #FFFFFF;
+$sidebar-logo-bgcolor: $theme-base-color;
+$sidebar-logo-color: #FFFFFF;
+$sidebar-hide-bgcolor: #FFFFFF;
+$sidebar-hide-bar-bgcolor: #F6F6F6;
+$sidebar-hide-bar-sec-bgcolor: #F6F6F6;
+$sidebar-hide-bar-sec-actbgcolor: #02A8F8;
+$sidebar-hide-bar-sec-color: #FFFFFF;
+$sidebar-bgcolor-liner: $sidebar-hide-bgcolor;
+$sidebar-webkit-bgcolor-liner: $sidebar-hide-bgcolor;
+$sidebar-color: $text-color;
+$sidebar-item-color: $primary-color;
+$sidebar-search-color: #192229;
+$sidebar-hover-bgcolor: #F6F6F6;
+
+// Spin
+$spin-color: $primary-color;
+$spin-fix-background-color: rgba(255,255,255,.9);
+
+// Steps
+$steps-default-color: $primary-color;
+$step-content-color: #7E828A;
+$step-active-color: #8ECCFF;
+
+// StickBar
+$stickbar-bgcolor: #fff;
+$stickbar-linear-icon-color: linear-gradient(to right, #07B4FA, #037DF3);
+
+// Switch
+$switch-border-color: #c3cbd6;
+$switch-background-color: #c3cbd6;
+$switch-disabled-background-color: #d7dde4;
+$switch-disabled-border-color: #d7dde4;
+
+// Table
+$table-row-dragover-td-color: #fff;
+$table-summation-border: 1px solid #dce1e7;
+
+// Tabs
+$tabs-nav-tab-color: #333333;
+$tabs-tab-hover-color: #029AFD;
+$tabs-tab-active-color: $primary-color;
+$tabs-tab-nav-right-active-color: #fff;
+$tabs-tab-nav-right-active-bgcolor: $theme-base-hover-color;
+$tabs-bar-active-background: #fff;
+$tabs-bar-active-border-color: $border-color-base;
+$tabs-bar-active-color: $primary-color;
+$tabs-tab-ink-bar-bg: $primary2-color;
+$tabs-bar-border-bottom: 1px solid #D9D9D9;
+
+// Tag
+$select-tag-background: #f1f1f1;
+$tag-background: $color-default-one;
+$tag-color: $text-color;
+$tag-dot-background: $background-color-base;
+$tag-border-background: $background-color-base;
+
+// TopBar
+$topbar-base-color: $white-font-color;
+$topbar-bgcolor: $theme-base-color;
+$topbar-color: $topbar-base-color;
+$topbar-title-span-color: #FFF;
+$topbar-fenge-color: #E8E3E3; //darken(#fff, 10%)
+$topbar-hover-color: $white-font-color;
+$topbar-hover-bgcolor: $link-hover-color;
+$topbar-active-bgcolor: $link-active-color;
+$topbar-active-color: $white-font-color;
+$topbar-input-search-color: #fff;
+$topbar-input-search-bg: rgba(255, 255, 255, 0.2);
+$topbar-input-search-hover-bg: rgba(255, 255, 255, 1);
+$topbar-input-search-hover-color: #666;
+$topbar-input-search-border: none;
+$topbar-input-search-icon-color: $white-font-color;
+$topbar-menu-item-color: #F7F7F7;
+$topbar-menu-item-hover-color: #FFF;
+$topbar-menu-item-active-color: #FFF;
+$topbar-selectdown-bgcolor: $white-font-color;
+$topbar-selectdown-color: #485566;
+$topbar-selectdown-hover-bgcolor: #4A94FA;
+$topbar-selectdown-item-hover-color: #108ffd;
+$topbar-selectdown-item-hover-bgcolor: #f3f3f3;
+$topbar-shadow: $shadow-base;
+$topbar-icon-person: #9BABBF;
+$topbar-icon-person-bg: #EEF2F5;
+
+// Transfer
+$transfer-header-bg: $background-color-normal;
+$transfer-list-content-item-hover-color: $theme-base-hover-color;
+$transfer-operation-btn-color: $link-color;
+$transfer-operation-btn-bgcolor: $btn-primary-color;
+$transfer-operation-btn-border-color: $border-color-base;
+$transfer-operation-btn-border-hover-color: $link-color;
+
+// TransferTable
+$transfer-table-header-bg: $color-default-one;
+
+// Tree
+$tree-title-focus-color: $text-color;
+$tree-title-focus-bgcolor: #D9EBFD;
+$tree-selected-color: $primary-color;
+$tree-selected-bgcolor: #F5F5F5;
+$tree-title-hover-bgcolor: #E5F2FD;
+$tree-title-hover-color: $text-color;
+$tree-item-icon-fabumian-bg: $success-color;
+
+// TypeField
+$typefield-tip-background: #fff;
+$typefield-tip-color: $link-active-color;
+$typefield-input-background-color: $background-color-base;
+$typefield-input-focus-border-color: $link-active-color;
+
+// WaterMark
+$water-mark-text-color: rgba(0,0,0,0.1);
+
+// Waves
+$waves-container-color: #fff;
+$waves-animation-background: currentColor;
+$waves-wrap-light-color: rgba(255, 255, 255, 0.45);
+
+/* $base */
+$base-border: 1px solid #000;
+
+// hTreeExt
+$h-tree-ext-color: $text-color;
+$h-tree-ext-background-color: $content-bgcolor;
+$h-tree-ext-box-background-color: $background-color-base;
+$h-select-ext-tag-background-color: $mixin-checkbox-disabled-bg;
+$h-select-ext-tag-text-color: #000;
+$h-select-ext-border-color-base: $text-color-support;
+$h-select-ext-border-color-hover: $theme-base-active-color;
+$h-tree-ext-node-text-color: $primary-hover-color;
+$h-tree-ext-checkbox-background-color: $theme-base-color;
+$h-select-ext-box-shadow-color-hover: rgba(3,125,243, 0.2);
+$h-tree-ext-pop-background-color: $content-bgcolor;
+
+// uCommunicationNumber
+$u-communication-number-areacodedetail-background-color: white;
+$u-communication-number-areacodedetail-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
+$u-communication-number-areacodedetail-color: #333;
+$u-communication-number-areaselectbox-background-color: white;
+$u-communication-number-areaselectbox-color: #333;
+$u-communication-number-areaselectbox-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
+$u-communication-number-areaselectitem-hover-background: rgba(2, 112, 218, .1);
+$u-communication-number-areaCode-focus-shadow: 0 0 0 2px rgba(2, 112, 218, .2);
+$u-communication-number-areaCode-focus-border-color: #5dacf7;
+$u-communication-number-areaCode-hover-border-color: #5dacf7;
+$u-communication-number-areacodeicon-color: #999;
+$u-communication-number-hinputicon-color: #999;
+$u-communication-number-areacodeerror-border-color: #d9d9d9;
+$u-communication-number-hinputreadonly-background: white;
+$u-communication-number-hinputdisabled-background: #ededed;
+
+//USimpledict
+$u-moredatapanel-background: #f5f5f5;
+$u-moredatapanel-color: #000;
+$u-moredatapaneldetail-background: white;
+$u-moredatapaneldetailitem-background: #f5f5f5;
+$u-moredatapaneldetailitem-color: #000;
+$u-moredatapaneldetailitem-border: none;
+$u-moredatapaneldetailitem-padding: 2px;
+
+//compareIcon样式
+$u-compareiconmodal-border: 1px solid #f5f5f5;
+$u-compareiconmodal-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.20);
+$u-compareiconmodal-background: white;
+$u-compareiconmodal-title-color: #A1A1A1;
+$u-compareiconmodal-add-color: #333;
+$u-compareiconmodal-del-color: #333;
+
+//switchDescribe
+$u-switch-describe-background: white;
+$u-switch-describe-color: #000;
+
+// iconHover
+$icon-hover-zybox-color: black;
+$icon-hover-zybox-border: 1px solid #d9d9d9;
+$icon-hover-zybox-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.30);
+$icon-hover-zybox-background: white;
+
+// iconRank
+$icon-rank-bg-one: #037DF3;
+$icon-rank-bg-two: #2D95F8;
+$icon-rank-bg-three: #63B0FA;
+$icon-rank-bg-number: #EDF4FE;
+
+// uInfoPanel
+$u-info-panel-indicator-bgcolor: $primary2-color;
+
+// uCharts
+$u-charts-status-success: #4CD6A1;
+$u-charts-status-error: #F36F7D;
+$u-charts-status-info: #3597F5;
+$u-charts-status-warning: #FFC76C;
+
+@import "../main.scss";
