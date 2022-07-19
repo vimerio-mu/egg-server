@@ -36,10 +36,10 @@ convert主要负责将皮肤配置项转为特定的格式
 
 ### 转为文件
 
-服务器存储的AllSettings的格式同scss，如下：
+服务器存储的AllSettings的格式类似js，如下：
 
-```scss
-$color-default-one: #F7F7F7;$color-default-two: #F2F2F2;$color-default-three: #EDEDED;$color-default-four: #E6E6E6;$color-default-five: #D9D9D9;$color-default-six: #999;
+```js
+colorDefaultOne: '#F7F7F7',colorDefaultTwo: '#F2F2F2',colorDefaultThree: '#EDEDED',colorDefaultFour: '#E6E6E6',colorDefaultFive: '#D9D9D9',colorDefaultSix: '#999'
 ```
 
 在`convert/js/:name`中将存储的AllSettings的格式转换为js文件所需的格式，如下：
@@ -107,3 +107,5 @@ console.log(result.css);
 如果用字符串：优点：不需要文件操作的任何支持，直接生成；缺点：需要将其他import的文件先处理成字符串然后和上文生成的scss字符串进行拼接（可能会有顺序上的问题）
 
 最后还是生成css字符串而不是文件，让前端自己处理下载格式
+
+> 已经在/test中进行了测试，`compileString`可以正常的覆盖解析变量，生成css格式字符串，已经选择使用这种方式

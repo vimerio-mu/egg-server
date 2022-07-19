@@ -1,0 +1,409 @@
+// 先引入hui的custom.scss，然后再覆盖
+// @import "../../../../node_modules/h_ui/src/style/custom.scss";
+@import "../hui/style/custom.scss";
+
+// A-Base
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$code-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$font-size-base: 14px; //正文变小
+$font-size-small: 12px;
+$font-size-icon: 16px;
+$line-height-base: 1.5;
+$border-radius-small: 2px;
+$max-height: 140px;
+$icon-font-size: $font-size-base;
+$icon-font-size-small: $font-size-small;
+
+// Alert
+$alert-desc-font-size: $font-size-base;
+$alert-desc-line-height: 22px;
+$alert-icon-top: 11px;
+$alert-icon-left: 12px;
+$alert-with-desc-message-line-height: 1;
+$alert-with-icon-padding: 8px 48px 8px 34px;
+$alert-with-desc-icon-padding: 12px 12px 12px 34px;
+$alert-with-desc-iconfont-font-size: $font-size-icon;
+$alert-with-desc-icon-left: 12px;
+
+// BackTop
+$backtop-inner-border-radius: 2px;
+$backtop-inner-padding: 4px 6px;
+$backtop-inner-font-size: 14px;
+
+// Badges
+$badge-count-font-size: 12px;
+$badge-count-top: -8px;
+$badge-count-right: 0;
+$badge-count-height: 14px;
+$badge-count-border-radius: 40px;
+$badge-count-min-width: 20px;
+$badge-count-line-height: 14px;
+$badge-count-padding: 0 6px;
+
+//Button
+$btn-font-size: $font-size-base;
+$btn-font-weight: normal;
+$btn-padding-base: 0 6px; //button没有height属性，只通过padding处理高度???
+$btn-padding-large: 0 6px;
+$btn-padding-small: 0 6px;
+$btn-font-size-large: 14px;
+$btn-font-size-small: 12px;
+$btn-border-radius: 2px;
+$btn-border-radius-small: 2px;
+$btn-height-small: 22px;
+$btn-height-normal: $line-height-base*2;
+$btn-height-large: 32px;
+$btn-min-width-small: 20px;
+$btn-min-width-normal: 30px;
+$btn-min-width-large: 40px;
+$btn-before-top: -1px;
+$btn-before-left: -1px;
+$btn-before-bottom: -1px;
+$btn-before-right: -1px;
+
+// Calendar
+$calendar-top-text-font-size: 18px;
+$calendar-top-change-height: 40px;
+$calendar-top-change-line-height: 10px;
+$calendar-month-content-font-size: 12px;
+$calendar-month-content-item-height: 32px;
+$calendar-month-content-item-font-size: 12px;
+$calendar-month-content-item-border-width: 0 1px 1px 0;
+$calendar-month-content-item-nth-child-border-width: 0 1px 1px 1px;
+$calendar-month-title-font-size: 15px;
+$calendar-month-title-height: 36px;
+$calendar-month-title-line-height: 40px;
+$calendar-month-max-width: 100%;
+$calendar-month-header-border-width: 0px;
+
+// Cascader 级联
+$cascader-label-line-height: 28px;
+$cascader-size-large-line-height: 28px;
+$cascader-size-small-line-height: 28px;
+$cascader-dropdown-padding: 0;
+$cascader-label-line-padding: 0 7px;
+$cascader-menu-min-width: 100px;
+$cascader-menu-height: 140px;
+$cascader-menu-margin: 0;
+$cascader-menu-padding: 0;
+$cascader-item-padding-right: 24px;
+$cascader-item-i-right: 12px;
+$cascader-item-i-margin-top: -6px;
+
+// Checkbox
+$checkbox-wrapper-font-size: 12px;
+$checkbox-wrapper-padding: 0 8px;
+$checkbox-wrapper-border-radius: 2px;
+
+// Collapse
+$collapse-header-height: 28px;
+
+// Datepicker
+$date-picker-panel-shortcut-height: 28px;
+$date-picker-cell-span-margin: 2px;
+$date-picker-cells-header-span-margin: 2px;
+$date-picker-cells-cell-span-width: 28px;
+$date-picker-cells-cell-span-height: 28px;
+$date-picker-panel-width: 16px;
+$date-picker-panel-height: 16px;
+$date-picker-panel-line-height: 26px;
+$date-picker-panel-margin-top: 4px;
+$date-picker-sidebar-width: 76px;
+$date-picker-sidebar-margin-left: -76px;
+
+// EditGrid
+$editgrid-th-height: 32px;
+$editgrid-cell-padding: 5px 8px;
+$editgrid-expand-margin-left: 8px;
+
+// FastDate
+$fastdate-edit-border-radius: 2px;
+$fastdate-activity-font-size: 12px;
+
+// Form
+$form-item-label-padding: 0 8px 0 0;
+$form-item-labelWrap-padding: 1px 8px 1px 0;
+$form-item-margin-bottom: 8px;
+$form-component-height: 28px;
+
+// Input
+$input-height-base: 28px;
+$input-height-large: 30px;
+$input-height-small: 28px;
+$input-padding-horizontal: 8px;
+$input-padding-vertical-base: 4px;
+$input-padding-vertical-small: 1px;
+$input-padding-vertical-large: 5px;
+$input-icon-width: 32px;
+$input-icon-normal-padding-right: 32px;
+$input-icon-small-width: 24px;
+$input-tips-padding-top: 5px;
+$input-tips-ul-li-max-width: 100px;
+$input-tips-ul-li-div-height: 4px;
+$input-tips-ul-li-div-margin-bottom: 2px;
+$input-wrapper-vertical-align: top;
+
+// InputNumber
+$inputnumber-width: 200px;
+
+// Menu
+$menu-horizontal-height: 52px;
+$menu-horizontal-primary-item-height: 52px;
+
+// Message
+$message-notice-content-padding: 16px;
+$message-content-font-size: $font-size-base;
+$message-notice-content-text-padding-right: 26px;
+$message-icon-margin-right: 8px;
+$message-icon-font-size: 16px;
+$message-notice-close-right: 12px;
+$message-notice-close-top: 18px;
+
+// Mixin
+$mixin-input-readonly-opacity: 1;
+$mixin-select-item-font-size: $font-size-base;
+
+// Msgbox
+$msgbox-title-font-size: $font-size-base;
+$msgbox-body-font-size: $font-size-base;
+$msgbox-border-radius: 2px;
+$msgbox-body-padding: 20px;
+$mixin-content-header-padding: 9px 20px;
+
+// Notice
+$notice-width: 390px;
+$notice-padding: 20px;
+$notice-margin-bottom: 10px;
+$notice-margin-right: 20px;
+$notice-notice-padding: 20px;
+$notice-desc-font-size: $font-size-base;
+$notice-title-padding-right: 20px;
+$notice-with-desc-iconfont-font-size: $font-size-icon;
+$notice-with-desc-desc-margin-left: 24px;
+
+// Page
+$page-item-height: 24px;
+$page-item-line-height: 24px;
+$page-option-select-height: 24px;
+
+// Panel
+$panel-wrap-border-radius: 2px;
+
+// Prefix
+$css-prefix: h-;
+$u-css-prefix: u-;
+$selectTable-prefix-cls: "#{$css-prefix}selectTable";
+$selectTable-item-prefix-cls: "#{$css-prefix}selectTable-item";
+$select-group-prefix-cls: "#{$css-prefix}selectTable-group";
+
+// Radio
+$radio-wrapper-font-size: $font-size-small;
+$radio-vertical-wrapper-height: 30px;
+$radio-vertical-verify-tip-margin-top: -5px;
+$radio-wrapper-margin-right: 8px;
+$radio-inner-width: 14px;
+$radio-inner-height: 14px;
+$radio-inner-top: 0;
+$radio-inner-left: 0;
+$radio-inner-after-width: 6px;
+$radio-inner-after-height: 6px;
+$radio-inner-after-top: 3px;
+$radio-inner-after-left: 3px;
+$radio-large-inner-width: 16px;
+$radio-large-inner-height: 16px;
+$radio-large-inner-after-width: 8px;
+$radio-large-inner-after-height: 8px;
+$radio-small-inner-width: 12px;
+$radio-small-inner-height: 12px;
+$radio-small-inner-after-width: 5px;
+$radio-small-inner-after-height: 5px;
+$radio-group-button-wrapper-padding: 0 12px;
+
+// Rate
+$rate-font-size: 16px;
+
+// Select
+$select-single-selection-font-size: $font-size-base;
+$select-single-selection-selected-value-padding-right-close: 24px; // select无选中项时也提前预留close图标的空间
+$select-dropdown-item-height: 28px;
+$select-vertical-align: top;
+$select-group-title-font-size: $font-size-base;
+$select-group-title-padding-left: 8px;
+$select-group-title-height: 28px;
+$select-group-title-line-height: 28px;
+$select-tag-padding-left: 2px;
+$select-tag-padding-right: 12px;
+$select-tag-margin-left: 0;
+
+// SelectBlock
+$selectBlock-item-height: 28px;
+$selectBlock-item-line-height: 28px;
+$selectBlock-drop-max-height: 280px;
+$selectBlock-show-bottom-max-height: 280px;
+
+// SelectDropdown
+$select-dropdown-content-padding: 0;
+$selectDropdown-margin: 5px 0;
+
+// SelectTable
+$selectTable-multiple-tag-margin: 3px 4px 3px 0;
+$selectTable-selection-h-tag-max-width: 45%;
+
+// Spin
+$spin-dot-size-small: 28px;
+$spin-dot-size: 28px;
+$spin-dot-size-large: 28px;
+
+// Steps
+$steps-head-inner-icon-font-size: 15px;
+$switch-width: 48px;
+$switch-height: 22px;
+$switch-line-height: 24px;
+$switch-border-radius: 12px;
+
+// Table
+$table-after-height: 100%;
+$table-large-td: 28px;
+$table-small-td: 28px;
+$table-normal-td: 28px;
+$table-title-height: 30px;
+$table-title-line-height: 30px;
+$table-th-td-height: 28px;
+$table-th-height: 30px;
+$table-cell-padding-left: 8px;
+$table-cell-padding-right: 8px;
+$table-large-th-height: 30px;
+$table-large-td-height: 28px;
+$table-large-title-height: 30px;
+$table-large-title-line-height: 30px;
+$table-large-tiptext-height: 30px;
+$table-large-tiptext-line-height: 30px;
+$table-small-th-height: 28px;
+$table-small-td-height: 28px;
+$table-small-title-height: 30px;
+$table-small-title-line-height: 30px;
+$table-tiptext-height: 30px;
+$table-tiptext-line-height: 30px;
+
+// Tabs
+$tabs-bar-margin-bottom: 10px;
+$tabs-bar-top-margin-bottom: 10px;
+$tabs-tab-font-size: 14px;
+$tabs-tab-line-height: 20px;
+$tabs-tab-iconfont-width: 12px;
+$tabs-tab-iconfont-height: 12px;
+
+// Tag
+$tag-height: 28px;
+$tag-font-size: 12px;
+$tag-line-height: 28px;
+$tag-dot-height: 28px;
+$tag-dot-line-height: 28px;
+$tag-dot-padding: 0 8px;
+$tag-dot-inner-width: 10px;
+$tag-dot-inner-height: 10px;
+$tag-dot-inner-top: 8px;
+$tag-border-height: 28px;
+$tag-border-line-height: 28px;
+
+// TextDiff
+$textdiff-wrapper-h-textdiff-content-border-radius: 2px;
+$textdiff-wrapper-h-textdiff-content-pre-font-family: "PingFangSC", Arial, Microsoft Yahei, sans-serif, Verdana;
+$textdiff-h-textdiff-selectContent-height: 20px;
+$textdiff-h-textdiff-selectContent-line-height: 20px;
+
+// TimePicker
+$time-picker-cells-width-base: 66px;
+$time-picker-cells-list-ul-li-height: 24px;
+$time-picker-cells-list-ul-li-line-height: 24px;
+$time-picker-header-height: 33px;
+$time-picker-header-line-height: 33px;
+
+// Transfer
+$transfer-list-font-size: $font-size-base;
+$transfer-border-radius: 2px;
+$transfer-list-padding-top: 32px;
+$transfer-list-header-padding: 7px 8px;
+
+// TransferTable
+$transfer-table-border-radius: 2px;
+
+// Tree
+$tree-title-font-size: $font-size-base;
+
+// TypeField
+$typefield-tip-font-family: "PingFangSC-Regular";
+$typefield-tip-line-height: 1;
+$typefield-tip-top: 34px;
+$typefield-tip-left: 0;
+$typefield-tip-padding: 6px 8px;
+$typefield-tip-font-size: 14px;
+$typefield-tip-border: 0;
+$typefield-tip-border-radius: 2px;
+
+// Waves
+$waves-animation-transition: 0.7s transform cubic-bezier(0.2, 0.4, 0.4, 0.9), 0.3s opacity cubic-bezier(0.2, 0.4, 0.4, 0.1);
+$waves-animation-visible-opacity: 0.3;
+$waves-wrap-width: 100%;
+$waves-wrap-height: 100%;
+$waves-wrap-left: 0;
+$waves-wrap-top: 0;
+$waves-animation-top: 0;
+$waves-animation-left: 0;
+$waves-animation-border-radius: 50%;
+
+// ZIndex
+$zindex-water-mark: 1010;  // 1.锁屏和水印层级
+$zindex-notification: 1005;  // 2.消息弹框
+$zindex-message: 1005;  // 3.普通弹窗
+$zindex-async-download: 995;  // 4.下载悬浮按钮
+$zindex-drawer: 985;  // 5.左侧sidebar, 顶部搜索下拉框等
+$zindex-select: 985;
+$zindex-environment-symbol: 970;  // 6.环境标志徽标
+$zindex-topbar-bg: 965;  // 7.顶部导航背景层级
+$zindex-topbar-stickbar: 960;  // 8.顶部stickBar层级
+$zindex-edit-and-ap-center: 950;  // 9.新首页应用中心层级
+
+/* 1.0 $base */
+$s-font-size: 13px;
+$m-font-size: 16px;
+$bold-font: 700;
+$normal-font: 400;
+/* 2.0 $topbar */
+$topbar-base-height: 52px;
+$topbar-line-height: 22px;
+$topbar-font-size: 16px;
+$topbar-nav-padding: 0 24px;
+$topbar-tool-padding: 0 8px;
+$topbar-l-fonsize: 16px;
+$topbar-m-fonsize: 12px;
+$topbar-fontweight: $normal-font;
+/* 3.0 $sidebar */
+$sidebar-base-width: 200px;
+$sidebar-collapse-width: 60px;
+$sidebar-select-height: 24px;
+$sidebar-select-border: none;
+$sidebar-select-opacity: 1;
+$sidebar-menu-lineheight: 46px;
+$sidebar-menu-padding1: 6px 30px 6px 18px;
+$sidebar-menu-padding2: 9px 30px 9px 40px;
+$sidebar-menu-padding3title: 9px 30px 9px 30px;
+$sidebar-menu-padding3: 9px 30px 9px 50px;
+$sidebar-search-marTop: -6px;
+$sidebar-l-fonsize: 14px;
+$sidebar-m-fonsize: 12px;
+$sidebar-search-opacity: 0.49;
+/* 4.0 $navbar */
+$navbar-base-height: 32px;
+$navbar-wrap-padding: 0 17px;
+$navbar-tag-padding: 4px 9px;
+$navbar-tag-height: 32px;
+$navbar-tag-lineheight: 24px;
+$navbar-tag-close-tip-height: 100px;
+$navbar-tag-close-tip-width: 148px;
+$navbar-tag-close-tip-padding: 2px 0;
+$navbar-tag-close-tip-item-height: 32px;
+$navbar-tag-close-right: 4px;
+$navbar-tag-close-top: 5px;
+$navbar-l-fonsize: 14px;
+$navbar-m-fonsize: 13px;

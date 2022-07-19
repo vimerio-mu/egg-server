@@ -37,11 +37,10 @@ class SkinController extends Controller {
     }
   }
   // 前端使用：
-  // this.axios
-  // .post("http://localhost:7001/skins/", store)
-  // .then(res => {
-  //   console.log(res);
-  // });
+  // fetch('http://localhost:7001/skins/')
+  //     .then(response => response.json())
+  //     .then(data => { this.skin = data[0] })
+  //     .catch(error => alert(error))
   // 更新皮肤
   async update() {
     const { ctx } = this;

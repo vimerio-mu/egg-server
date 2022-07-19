@@ -20,13 +20,12 @@ class ConvertController extends Controller {
     // 如果有皮肤，返回的是 string
     if (res[0]) {
       const settings = res[0].AllSettings;
-      ctx.body = settings.split(',').join(',\n');
-      res = settings.split(',').join(',\n');
+      ctx.body = settings.split(',\n').join(',\n');
+      res = settings.split(',\n').join(',\n');
     } else {
       ctx.body = `找不到name为${name}的皮肤`;
       throw new Error(`找不到name为${name}的皮肤`);
     }
-    return res;
   }
   async convertToScss() {
     const { ctx } = this;
@@ -57,10 +56,50 @@ class ConvertController extends Controller {
 
     if (res[0]) {
       let settings = res[0].AllSettings;
-      const scssArr = settings.split(',').map(item => jsToScss(item));
+      const scssArr = settings.split(',\n').map(item => jsToScss(item.trim()));
       settings = scssArr.join('\n');
       ctx.body = settings;
       res = settings;
+    } else {
+      ctx.body = `找不到name为${name}的皮肤`;
+      throw new Error(`找不到name为${name}的皮肤`);
+    }
+    return res;
+  }
+  async convertToCss() {
+    const { ctx } = this;
+    const name = ctx.params.id;
+    let res = await ctx.model.SkinsModel.find({ SkinName: name });
+    function jsToScss(js) {
+      // 1. 添加开头的$；
+      let scss = '$' + js;
+      const arr = scss.split(':');
+      console.log(arr);
+      // 2. 将变量名从小驼峰式改为用-连接
+      const nameArr = arr[0].split('');
+      const length = nameArr.length;
+      for (let i = 1; i < length; i++) {
+        if (nameArr[i].toUpperCase() === nameArr[i]) {
+          nameArr.splice(i, 0, '-');
+          nameArr[i + 1] = nameArr[i + 1].toLowerCase();
+        }
+      }
+      arr[0] = nameArr.join('');
+      // 3. 将变量值的引号去掉
+      arr[1] = arr[1].replace(/\'/g, '');
+      scss = arr.join(':');
+      scss += ';';
+      return scss;
+    }
+
+    if (res[0]) {
+      let settings = res[0].AllSettings;
+      const scssArr = settings.split(',').map(item => jsToScss(item));
+      settings = scssArr.join('\n');
+      const sass = require('sass');
+      const result = sass.compileString(settings);
+      res = result.css;
+      ctx.body = res;
     } else {
       ctx.body = `找不到name为${name}的皮肤`;
       throw new Error(`找不到name为${name}的皮肤`);

@@ -1,0 +1,779 @@
+/*all SCSS validate*/
+$btn-prefix-cls: "#{$css-prefix}btn";
+$input-prefix-cls: "#{$css-prefix}input";
+$checkbox-prefix-cls: "#{$css-prefix}checkbox";
+$checkbtn-prefix-cls: "#{$css-prefix}checkbtn";
+$radio-prefix-cls: "#{$css-prefix}radio";
+$radio-group-prefix-cls: "#{$radio-prefix-cls}-group";
+$radio-group-button-prefix: "#{$radio-group-prefix-cls}-button";
+$icon-prefix-cls: "#{$css-prefix}icon";
+$menu-prefix-cls: "#{$css-prefix}menu";
+$message-prefix-cls: "#{$css-prefix}message";
+$modal-prefix-cls: "#{$css-prefix}modal";
+$confirm-prefix-cls: "#{$css-prefix}modal-confirm";
+$select-prefix-cls: "#{$css-prefix}select";
+$select-item-prefix-cls: "#{$css-prefix}select-item";
+$form-prefix-cls: "#{$css-prefix}form";
+$form-item-prefix-cls: "#{$form-prefix-cls}-item";
+$page-prefix-cls: "#{$css-prefix}page";
+$cascader-prefix-cls: "#{$css-prefix}cascader";
+$datagrid-prefix-cls: "#{$css-prefix}datagrid";
+$input-number-prefix-cls: "#{$css-prefix}input-number";
+$drawer-mask-prefix-cls: "#{$css-prefix}drawer-mask";
+$notice-prefix-cls: "#{$css-prefix}notice";
+$tabs-prefix-cls: "#{$css-prefix}tabs";
+$tag-prefix-cls: "#{$css-prefix}tag";
+$badge-prefix-cls: "#{$css-prefix}badge";
+$table-prefix-cls: "#{$css-prefix}table";
+$transfer-prefix-cls: "#{$css-prefix}transfer";
+$picker-prefix-cls: "#{$css-prefix}picker";
+$date-picker-prefix-cls: "#{$css-prefix}date-picker";
+$steps-prefix-cls: "#{$css-prefix}steps";
+
+/* 滚动条 */
+::-webkit-scrollbar{
+  width: 16px !important;
+  height: 16px !important;
+}
+::-webkit-scrollbar-track{
+  -webkit-box-shadow: none !important;
+  background-color: $scrollbar-bgcolor;
+}
+::-webkit-scrollbar-thumb{
+  border: 4px solid transparent !important;
+  border-radius: 8px !important;
+  background: $scrollbar-color;
+  background-clip: content-box !important;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+//::-webkit-scrollbar-track-piece:start, ::-webkit-scrollbar-track-piece:end {
+//  border: none;
+//}
+
+/*h-button*/
+.#{$btn-prefix-cls} {
+  color: #fff;
+  &-ghost, &-dashed {
+    color: $text-color;
+  }
+  & > .h-icon + span, & > span + .h-icon{
+    font-size: $font-size-base;
+  }
+  &-group {
+    .#{$btn-prefix-cls}-ghost {
+      .iconfont {
+        color: $icon-color;
+      }
+      &:hover, &.active {
+        .iconfont {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.#{$badge-prefix-cls} {
+  &-count-alone {
+    display: inline-block;
+    line-height: 12px;
+    vertical-align: middle;
+  }
+}
+
+/*h-tag*/
+.#{$tag-prefix-cls} {
+  &:not(.#{$tag-prefix-cls}-border):not(.#{$tag-prefix-cls}-dot):not(.#{$tag-prefix-cls}-checked){
+    color: $tag-color;
+  }
+  &,
+  a,
+  a:hover {
+    color: $tag-color;
+  }
+  > i.icon-close {
+    color: $tag-color;
+  }
+}
+
+.#{$tabs-prefix-cls} {
+  &-bar {
+    border-bottom: $tabs-bar-border-bottom;
+  }
+  &-ink-bar {
+    background-color: $tabs-tab-ink-bar-bg;
+  }
+}
+
+/*h-radio*/
+.#{$radio-group-button-prefix-cls} {
+  .#{$radio-prefix-cls}-wrapper {
+    .#{$radio-prefix-cls} {
+      display: none;
+    }
+    &:hover {
+      color: $primary-hover-color;
+    }
+    &-disabled {
+      background-color: $disabled-bgcolor;
+      &:hover {
+        background-color: $disabled-bgcolor;
+        color: $color-default-seven;
+      }
+      &.#{$radio-prefix-cls}-wrapper-checked {
+        &:hover {
+          background-color: $radio-group-button-wrapper-disabled-wrapper-checked-background-color;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/*h-datatree*/
+$h-datatree-search-border-color: #d7dde4;
+$h-datatree-search-visable-border-color: #02A9F9;
+
+/*h-panel*/
+// $h-panel-btn-color: #406ee8;
+// $h-panel-btn-border-color: #406ee8;
+
+/*h-input*/
+.#{$input-prefix-cls} {
+  font-size: $font-size-base;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+  }
+
+  &:hover {
+    border-color: $input-hover-border-color;
+  }
+
+  &-disabled, &-readonly {
+    border-color: $border-color-disabled;
+  }
+
+  &-number {
+    &:hover {
+      border-color: $input-hover-border-color;
+    }
+
+    &:focus {
+      border-color: $input-focus-border-color;
+    }
+
+    &-input:hover {
+      border-color: $input-hover-border-color;
+    }
+
+    &-input:focus {
+      border-color: $input-focus-border-color;
+    }
+
+    &-focused {
+      border-color: $input-focus-border-color;
+    }
+
+    &-handler-up-inner.iconfont, &-handler-down-inner.iconfont {
+      font-size: 12px;
+    }
+
+  }
+
+  &-group {
+    font-size: $font-size-base;
+    &-prepend, &-append {
+      background-color: $form-item-label-background;
+    }
+  }
+}
+textarea.#{$input-prefix-cls} {
+  font-size: $font-size-base;
+}
+
+.h-typefield {
+  > input:focus {
+    box-shadow: $mixin-input-active-box-shadow;
+  }
+
+  &-tip {
+    width: 100%;
+    font-weight: bold;
+  }
+}
+.#{$checkbox-prefix-cls}-wrap {
+  .#{$checkbox-prefix-cls} {
+    .#{$checkbox-prefix-cls}-inner {
+      background-color: $background-color-base;
+      &:after {
+        content: "";
+        display: table;
+        width: 4px;
+        height: 8px;
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        border: 2px solid transparent;
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+    &.#{$checkbox-prefix-cls}-disabled {
+      .#{$checkbox-prefix-cls}-inner {
+        background-color: $mixin-checkbox-disabled-bg;
+      }
+    }
+    &.#{$checkbox-prefix-cls}-checked {
+      .#{$checkbox-prefix-cls}-inner {
+        background-color: $primary-color;
+        &:after {
+          border-color: #fff;
+          transform: rotate(45deg) scale(1);
+        }
+      }
+      &.#{$checkbox-prefix-cls}-disabled {
+        .#{$checkbox-prefix-cls}-inner {
+          &:after {
+            border-color: $mixin-checkbox-disabled-check-color;
+          }
+        }
+      }
+    }
+  }
+}
+.#{$checkbox-prefix-cls}-wrapper {
+  font-size: $font-size-base;
+  &.#{$checkbox-prefix-cls}-wrapper-checked {
+    .#{$checkbox-prefix-cls} {
+      &.#{$checkbox-prefix-cls}-disabled {
+        .#{$checkbox-prefix-cls}-inner {
+          background-color: $mixin-checkbox-disabled-bg;
+          &:after {
+            border-color: $mixin-checkbox-disabled-check-color;
+          }
+        }
+      }
+      .#{$checkbox-prefix-cls}-inner {
+        background-color: $primary-color;
+        &:after {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+  .#{$checkbox-prefix-cls} {
+    &.#{$checkbox-prefix-cls}-disabled {
+      .#{$checkbox-prefix-cls}-inner {
+        background-color: $mixin-checkbox-disabled-bg;
+        &:after {
+          border-color:transparent;
+        }
+      }
+    }
+    .#{$checkbox-prefix-cls}-inner {
+      background-color: $background-color-base;
+      &:after {
+        border-color: transparent;
+      }
+    }
+  }
+  .#{$checkbox-prefix-cls}-indeterminate {
+    .#{$checkbox-prefix-cls}-inner {
+      background-color: $primary-color;
+      &:after {
+        border-color: #fff;
+      }
+    }
+  }
+}
+// checkbtn
+.#{$checkbtn-prefix-cls} {
+  &-wrapper {
+    color: $text-color;
+    background-color: $btn-ghost-bg;
+    &.#{$checkbtn-prefix-cls}-wrapper-disabled {
+      color: $btn-disable-color;
+      background-color: $btn-disable-bg;
+    }
+    &.#{$checkbtn-prefix-cls}-wrapper-selected {
+      color: $primary-color;
+    }
+  }
+}
+// select
+.#{$select-prefix-cls} {
+  &-dropdown &-dropdown-list {
+    .#{$select-prefix-cls}-item {
+      align-items: center;
+    }
+  }
+  &-item {
+    padding: 7px 8px;
+    &-disabled {
+      color: $disabled-color;
+      background-color: $panel-bg;
+      &:hover {
+        color: $disabled-color;
+        background-color: $panel-bg;
+      }
+    }
+  }
+
+  .#{$select-prefix-cls}-selection {
+    &:hover {
+      border-color: $select-selection-hover-color;
+    }
+    .h-tag {
+      margin: 3px 2px;
+      .h-icon {
+        color: $icon-color-support;
+      }
+    }
+    .#{$select-prefix-cls}-input {
+      font-size: $font-size-base;
+    }
+  }
+
+  &-visible {
+    .#{$select-prefix-cls}-selection {
+      border-color: $select-selection-active-color;
+      box-shadow: $mixin-input-active-box-shadow;
+    }
+  }
+
+  &-group {
+    #{$select-prefix-cls}-item {
+      padding-left: 16px;
+    }
+
+    &-wrap {
+      #{$select-prefix-cls}-group-title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-not-found {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &-multiple {
+    .#{$select-prefix-cls}-item-selected {
+      background-color: $panel-bg;
+    }
+  }
+
+  &-readonly {
+    .#{$select-prefix-cls}-selection {
+      .#{$tag-prefix-cls} {
+        &:not(.#{$tag-prefix-cls}-border):not(.#{$tag-prefix-cls}-dot):not(.#{$tag-prefix-cls}-checked){
+          color: $text-color;
+        }
+        &,
+        a,
+        a:hover {
+          color: $text-color;
+        }
+        > i.icon-close {
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+.#{$form-prefix-cls} {
+  .#{$form-item-prefix-cls}-label {
+    font-size: $font-size-base;
+  }
+  .#{$form-item-prefix-cls}-changed{
+    .#{$select-prefix-cls}{
+      &-selection {
+        color:$changed-color;
+      }
+      .h-tag{
+        color:$changed-color !important;
+      }
+      .#{$select-prefix-cls}-input{
+        color: $text-color;
+      }
+    }
+  }
+  .#{$form-item-prefix-cls}-error {
+    .#{$select-prefix-cls}-selection:hover {
+      border-color: $error-color;
+    }
+    .#{$input-prefix-cls}-group-append, .#{$input-prefix-cls}-group-prepend {
+      background-color: transparent;
+    }
+  }
+}
+
+// cascader 级联下拉
+.h-cascader {
+  .h-cascader-menu-item {
+    line-height: 1;
+    padding: 7px 8px;
+  }
+}
+
+// table
+.#{$table-prefix-cls} {
+  &-wrapper {
+    ::-webkit-scrollbar-track {
+      border: 1px solid $border-color-base;
+      &:horizontal {
+        border-left: none;
+        //border-right: none;
+      }
+      &:vertical {
+        //border-top: none;
+        //border-bottom: none;
+      }
+    }
+  }
+}
+
+// selectTable
+.#{$selectTable-prefix-cls} {
+  &-selection {
+    &:hover {
+      border-color: $select-selection-hover-color !important;
+    }
+
+    &:focus {
+      border-color: $select-selection-active-color !important;
+    }
+
+    .h-tag {
+      height: 20px;
+      line-height: 18px;
+      vertical-align: middle;
+      margin: $selectTable-multiple-tag-margin;
+    }
+  }
+
+  &-single {
+    .#{$selectTable-prefix-cls}-selection {
+      .#{$selectTable-prefix-cls}-selected-value {
+        font-size: $font-size-base;
+      }
+
+      .h-tag {
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+  &-single &-selection {
+    .#{$selectTable-prefix-cls}-placeholder, .#{$selectTable-prefix-cls}-selected-value {
+      font-size: $font-size-base;
+    }
+  }
+  &-multiple &-selection {
+    .#{$selectTable-prefix-cls}-placeholder {
+      font-size: $font-size-base;
+    }
+  }
+  &-input {
+    font-size: $font-size-base;
+  }
+  &-hideMultHead{
+    font-size: $font-size-base;
+  }
+}
+
+// transform
+.h-transfer {
+  &-list {
+    .h-checkbox-wrapper {
+      margin-left: 0;
+    }
+
+    &-body {
+      height: 200px;
+    }
+
+    &-content-item {
+      line-height: 16px;
+      padding: 5px 8px;
+    }
+  }
+}
+
+// menu
+.#{$menu-prefix-cls} {
+  //水平模式primary主题下hover/active时超出1px【添加背景色时导致】
+  &-primary.#{$menu-prefix-cls}-horizontal &-item, &-primary.#{$menu-prefix-cls}-horizontal &-submenu {
+    &:hover {
+      background: $link-hover-color;
+    }
+    &-active {
+      background: $link-active-color;
+      &:hover {
+        background: $link-active-color;
+      }
+    }
+  }
+}
+
+// message
+.#{$message-prefix-cls} {
+  &-notice {
+    &-close {
+      i.iconfont{
+        @include close-base(0, 14px);
+      }
+    }
+  }
+  &-notice-content {
+    min-width: 300px;
+    &-text{
+      display: inline-block;
+      line-height: 20px;
+      height: 20px;
+    }
+  }
+}
+
+//msgBox
+.#{$modal-prefix-cls} {
+  &-header {
+    background-color: $msgbox-header-bg;
+    p {
+      margin: 0;
+    }
+  }
+  // 弹框按钮规范高度为28px, 最小宽度为68px
+  &-footer, &-confirm-footer {
+    .#{$btn-prefix-cls}-large {
+      height: 28px !important;
+      min-width: 68px !important;
+    }
+  }
+}
+.#{$confirm-prefix-cls} {
+  &-body {
+    font-size: $font-size-base;
+  }
+}
+
+//page
+.#{$page-prefix-cls} {
+  background-color: $background-color-base;
+  &-options {
+    line-height: 26px;
+  }
+  &-disabled {
+    border-color: $border-color-disabled;
+  }
+  &-item {
+    &-active {
+      background-color: $page-item-active-bg;
+    }
+  }
+  &.mini &-item-active {
+    border: $page-mini-item-active-border;
+  }
+}
+//addressInput
+.#{$u-css-prefix}address-dialog {
+  .#{$css-prefix}modal-mask,.#{$css-prefix}modal-wrap {
+    z-index: 1050!important;
+  }
+}
+//addressInputPicker
+.#{$u-css-prefix}address-picker {
+  .#{$css-prefix}input-readonly {
+    background-color: $background-color-base;
+  }
+  .#{$u-css-prefix}a-picker-detail {
+    width: 100%;
+    min-width: 500px;
+    height: 198px;
+    background-color: $background-color-base;
+    .#{$css-prefix}tabs-bar {
+      border-bottom: none;
+      .#{$css-prefix}tabs-nav-wrap {
+        width: 100%;
+        .#{$css-prefix}tabs-nav {
+          display: flex;
+          .#{$css-prefix}tabs-tab-active,.#{$css-prefix}tabs-tab {
+            flex: 1;
+            margin-right: 0;
+            text-align: center;
+            border: none;
+          }
+        }
+      }
+    }
+    .#{$css-prefix}tabs-content {
+      > .#{$css-prefix}tabs-tabpane {
+        .cells-list {
+          padding: 8px 12px 0 20px;
+          height: 158px;
+          .cell {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 30px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            span {
+              &:hover {
+                cursor: pointer;
+                color: $link-color;
+              }
+              &:focus {
+                cursor: pointer;
+                color: $link-active-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// cascader
+.#{$cascader-prefix-cls} {
+  &.#{$cascader-prefix-cls}-multiple {
+    .#{$cascader-prefix-cls}-rel {
+      background-color: $background-color-base;
+    }
+  }
+  .#{$css-prefix}input-readonly {
+    color: $text-color;
+    background: $background-color-base;
+  }
+}
+
+.#{$table-prefix-cls} {
+  &-wrapper {
+    /*修改table滚动条样式*/
+  }
+}
+
+// datagrid
+.#{$datagrid-prefix-cls} {
+  &-toolbar{
+    background-color: $background-color-base;
+    .pull-right{
+      .#{$css-prefix}btn{
+        min-width: 0;
+        &:hover{
+          background-color:#fff;
+          color:#037DF3;
+          border-color: #037DF3;
+        }
+      }
+    }
+    .expandListBox{
+      .#{$css-prefix}btn{
+        background-color: #fff;
+        color: #0270DA;
+        border-color: #0270DA;
+      }
+    }
+  }
+}
+//h-input-number
+.#{$input-number-prefix-cls} {
+  &-input {
+    background-color: $input-bg;
+  }
+}
+//h-drawer-mask
+.#{$drawer-mask-prefix-cls} {
+  z-index: $zindex-drawer;
+}
+//h-notice
+.#{$notice-prefix-cls} {
+  &-icon {
+    &-info {
+      color: $info-color;
+    }
+  }
+}
+//h-transfer
+.#{$transfer-prefix-cls} {
+  &-operation {
+    .h-btn.h-btn-ghost:not(.h-btn-disable) {
+      color: $transfer-operation-btn-color;
+      background-color: $transfer-operation-btn-bgcolor;
+      border-color: $transfer-operation-btn-border-color;
+      &:hover {
+        border-color: $transfer-operation-btn-border-hover-color;
+      }
+    }
+  }
+}
+//h-date-picker
+.#{$date-picker-prefix-cls} {
+  .#{$picker-prefix-cls}-confirm {
+    & > span {
+      color: $date-picker-confirm-time-disabled-color;
+    }
+  }
+  &-prev-btn, &-next-btn {
+    i {
+      color: $date-picker-confirm-arrow-btn-color;
+      &:hover {
+        color: $date-picker-confirm-arrow-btn-hover-color;
+      }
+    }
+  }
+}
+//h-steps
+.#{$steps-prefix-cls} {
+  &-item {
+    &.#{$steps-prefix-cls}-status-process {
+      .#{$steps-prefix-cls}-head-inner {
+        border-color: $steps-default-color;
+        background-color: $steps-default-color;
+      }
+    }
+  }
+}
+
+/* 特殊样式处理 */
+html {
+  &.uf3-page {
+    .h-transfer-list-body {
+      height: 280px;
+    }
+
+    .h-select-dropdown-content {
+      max-height: 280px;
+    }
+
+    .h-selectTable-dropdown-content, .h-selectTable-dropdown-noline-content {
+      .h-selectTable-dropdown-list {
+        max-height: 280px;
+      }
+    }
+  }
+  //&:not(&-dashed):not(&-ghost):not(&-text)
+  &.cmschina-theme {
+    .#{$btn-prefix-cls} {
+      &-default.#{$btn-prefix-cls}-small{
+        background-color: $btn-small-default-bg;
+        border-color: $btn-small-default-border;
+        &:hover {
+          background-color: $btn-small-default-hover-bgcolor;
+          border-color: $btn-small-default-hover-border-color;
+        }
+        &:active {
+          background-color: $btn-small-default-press-bgcolor;
+          border-color: $btn-small-default-press-border-color;
+        }
+      }
+    }
+  }
+}
+
+
